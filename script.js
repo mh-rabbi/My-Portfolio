@@ -85,17 +85,65 @@ document.querySelectorAll('.progress').forEach(bar => {
 });
 
 // Horizontal Project Scrolling
+// const projectsContainer = document.querySelector('.projects-container');
+// const leftArrow = document.querySelector('.left-arrow');
+// const rightArrow = document.querySelector('.right-arrow');
+
+// rightArrow.addEventListener('click', () => {
+//     projectsContainer.scrollBy({ left: 300, behavior: 'smooth' });
+// });
+
+// leftArrow.addEventListener('click', () => {
+//     projectsContainer.scrollBy({ left: -300, behavior: 'smooth' });
+// });
+
+// Horizontal project scrolling functionality
 const projectsContainer = document.querySelector('.projects-container');
 const leftArrow = document.querySelector('.left-arrow');
 const rightArrow = document.querySelector('.right-arrow');
+const projectCard = document.querySelector('.project-card');
+const cardWidth = projectCard.offsetWidth + parseInt(window.getComputedStyle(projectCard).marginRight);
+
+// Scroll amount (width of one card + margin)
+const scrollAmount = cardWidth;
 
 rightArrow.addEventListener('click', () => {
-    projectsContainer.scrollBy({ left: 300, behavior: 'smooth' });
+    projectsContainer.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
+    });
 });
 
 leftArrow.addEventListener('click', () => {
-    projectsContainer.scrollBy({ left: -300, behavior: 'smooth' });
+    projectsContainer.scrollBy({
+        left: -scrollAmount,
+        behavior: 'smooth'
+    });
 });
+
+// Hide/show arrows based on scroll position
+projectsContainer.addEventListener('scroll', () => {
+    const maxScroll = projectsContainer.scrollWidth - projectsContainer.clientWidth;
+    
+    if (projectsContainer.scrollLeft <= 10) {
+        leftArrow.style.opacity = '0.5';
+        leftArrow.style.cursor = 'not-allowed';
+    } else {
+        leftArrow.style.opacity = '1';
+        leftArrow.style.cursor = 'pointer';
+    }
+    
+    if (projectsContainer.scrollLeft >= maxScroll - 10) {
+        rightArrow.style.opacity = '0.5';
+        rightArrow.style.cursor = 'not-allowed';
+    } else {
+        rightArrow.style.opacity = '1';
+        rightArrow.style.cursor = 'pointer';
+    }
+});
+
+// Initialize arrow states
+projectsContainer.dispatchEvent(new Event('scroll'));
 
 // Set up scroll event listeners
 window.addEventListener('scroll', () => {
@@ -135,5 +183,52 @@ contactForm.addEventListener('submit', async (e) => {
     } finally {
         submitBtn.textContent = originalBtnText;
         submitBtn.disabled = false;
+    }
+});
+
+// Add touch event listeners for mobile
+let touchStartX = 0;
+let touchEndX = 0;
+
+projectsContainer.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+}, {passive: true});
+
+projectsContainer.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+}, {passive: true});
+
+function handleSwipe() {
+    if (touchEndX < touchStartX) {
+        // Swipe left - scroll right
+        projectsContainer.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    }
+    if (touchEndX > touchStartX) {
+        // Swipe right - scroll left
+        projectsContainer.scrollBy({
+            left: -scrollAmount,
+            behavior: 'smooth'
+        });
+    }
+}
+
+// Add keyboard arrow key support
+document.addEventListener('keydown', (e) => {
+    if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+        if (e.key === 'ArrowRight') {
+            projectsContainer.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        } else if (e.key === 'ArrowLeft') {
+            projectsContainer.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+        }
     }
 });

@@ -516,12 +516,15 @@ Skills Progress Bars
     gap: 20px;
 }
 
+
 /* Horizontal Project Scroller */
+/* Projects Scroller Container */
 .projects-scroller {
     overflow-x: auto;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE/Edge */
     padding-bottom: 20px;
+    position: relative;
 }
 
 .projects-scroller::-webkit-scrollbar {
@@ -533,21 +536,10 @@ Skills Progress Bars
     gap: 30px;
     width: max-content;
     padding: 10px 0;
+    scroll-behavior: smooth;
 }
 
-.project-card {
-    min-width: 300px;
-    background-color: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-}
-
+/* Scroll Arrows */
 .scroll-arrows {
     display: flex;
     justify-content: center;
@@ -564,10 +556,24 @@ Skills Progress Bars
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .arrow:hover {
     background: #5a7ae0;
+    transform: scale(1.1);
+}
+
+.arrow:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.arrow i {
+    font-size: 1rem;
 }
 
 /* Form Styles */
