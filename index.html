@@ -1,11 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Portfolio</title>
+    <!-- Add this to your <head> for Dart icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <p>Welcome to the document!</p>
+    <!-- Dark Mode Toggle -->
+    <div class="theme-switch-wrapper">
+        <span id="toggle-icon">
+            <i class="fas fa-sun"></i>
+        </span>
+        <label class="theme-switch">
+            <input type="checkbox" id="theme-toggle">
+            <div class="slider round"></div>
+        </label>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+        <div class="container">
+            <a href="#" class="logo">Portfolio</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hi, I'm <span class="highlight">Md. Mahmudul Hasan Rabbi</span></h1>
+                <p class="subtitle">Mobile Application Developer | 4th Year Student</p>
+                <a href="#projects" class="btn">View My Work</a>
+            </div>
+            <div class="hero-image">
+                <img src="img/image.jpg" alt="Profile Image">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About <span class="highlight">Me</span></h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>I'm a passionate web developer</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://via.placeholder.com/300" alt="About Image">
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About <span class="highlight">Me</span></h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>I'm a passionate Mobile Application Developer</h3>
+                    <p>I am Md. Mahmudul Hasan Rabbi, A passionate programmer and software engineering enthusiast with a
+                        solid academic background and track record. Adept at problem-solving and going beyond from my
+                        comfort zone to get things done. Currently I am a Mobile Application Developer(Native android)
+                        and learning flutter also. I am prepared to contribute significantly with my technological
+                        knowledge as a co-operative team member and skilled communicator.</p>
+                    <div class="social-links">
+                        <!-- Codeforces SVG -->
+                        <a href="YOUR_CODEFORCES_URL" target="_blank" title="Codeforces">
+                            <img src="https://codeforces.org/s/0/favicon-32x32.png" alt="Codeforces"
+                                style="width:24px;height:24px">
+                        </a>
+
+                        <!-- LeetCode SVG -->
+                        <a href="YOUR_LEETCODE_URL" target="_blank" title="LeetCode">
+                            <img src="https://leetcode.com/favicon.ico" alt="LeetCode" style="width:24px;height:24px">
+                        </a>
+                        <a href="YOUR_GITHUB_PROFILE" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+
+                        <!-- Social Media -->
+                        <a href="YOUR_LINKEDIN_PROFILE" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="YOUR_FACEBOOK_PROFILE" target="_blank" title="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="YOUR_INSTAGRAM_PROFILE" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="YOUR_TWITTER_PROFILE" target="_blank" title="Twitter/X">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="img/RabbiDP.JPG" alt="About Image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">My <span class="highlight">Skills</span></h2>
+            <div class="skills-grid">
+                <!-- Web Technologies -->
+                <div class="skill-card">
+                    <i class="fab fa-html5"></i>
+                    <h3>HTML5</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-css3-alt"></i>
+                    <h3>CSS3</h3>
+                </div>
+
+                <!-- Programming Languages -->
+
+                <div class="skill-card">
+                    <i class="fab fa-java"></i>
+                    <h3>Java</h3>
+                </div>
+                <!-- Then use: -->
+                <div class="skill-card">
+                    <i class="devicon-dart-plain"></i>
+                    <h3>Dart</h3>
+                </div>
+
+                <!-- C Family Languages -->
+                <!-- Then use these: -->
+                <div class="skill-card">
+                    <i class="devicon-c-plain"></i>
+                    <h3>C</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="devicon-cplusplus-plain"></i>
+                    <h3>C++</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="devicon-csharp-plain"></i>
+                    <h3>C#</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section (Horizontal Scroll) -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">My <span class="highlight">Projects</span></h2>
+            <div class="projects-scroller">
+                <div class="projects-container">
+
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/400x250" alt="Project 1">
+                        <div class="project-info">
+                            <h3>eGuidance App</h3>
+                            <p>Built with Java, XML and Firebase Integration</p>
+                            <a href="https://github.com/mh-rabbi/eGuidance-App" class="btn">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/400x250" alt="Project 2">
+                        <div class="project-info">
+                            <h3>GariBD App</h3>
+                            <p>Java, XML and Volley API integration</p>
+                            <a href="https://github.com/mh-rabbi/GariBD-App" class="btn">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/400x250" alt="Project 3">
+                        <div class="project-info">
+                            <h3>GroceryList App</h3>
+                            <p>Java, XML, Local Database with CRUD operaton</p>
+                            <a href="https://github.com/mh-rabbi/GroceryList-App" class="btn">View Project</a>
+                        </div>
+                    </div>
+
+                     <div class="project-card">
+                        <img src="https://via.placeholder.com/400x250" alt="Project 4">
+                        <div class="project-info">
+                            <h3>Virtual counselling website</h3>
+                            <p>Build with PHP and CSS</p>
+                            <a href="https://github.com/mh-rabbi/Database_Project_VRGC" class="btn">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/400x250" alt="Project 5">
+                        <div class="project-info">
+                            <h3>e-Learning website</h3>
+                            <p>HTML, CSS, JavaScript and PHP</p>
+                            <a href="https://github.com/mh-rabbi/e-learning-platform" class="btn">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/400x250" alt="Project 6">
+                        <div class="project-info">
+                            <h3>Portfolio Design</h3>
+                            <p>HTML, CSS, JavaScript</p>
+                            <a href="https://github.com/mh-rabbi/My-Portfolio" class="btn">View Project</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="scroll-arrows">
+                <button class="arrow left-arrow"><i class="fas fa-chevron-left"></i></button>
+                <button class="arrow right-arrow"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section with Formspree Integration -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
+            <form action="https://formspree.io/f/xeokdogl" method="POST" class="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="_replyto" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Rabbi &copy; 2025 My Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
